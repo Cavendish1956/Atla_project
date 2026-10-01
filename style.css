@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+}
+
+header img {
+    height: 35px;
+    padding: 2px;
+}
