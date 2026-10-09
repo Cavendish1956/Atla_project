@@ -1,0 +1,9 @@
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+  background-color: beige;
+  padding: 10px 50px;
+  border: 1px solid #ccc;
+}
