@@ -25,7 +25,7 @@ export default function Login() {
     if (error) {
       setError(error.message)
     } else {
-      navigate('/dashboard') // Si el login es correcto, enviamos al usuario al Dashboard
+      navigate('/proveedores') // Si el login es correcto, enviamos al usuario a vista proveedores
     }
     
     setLoading(false)
