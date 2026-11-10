@@ -24,36 +24,35 @@ export default function Proveedores() {
   }, [])
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-      <h1>Módulo de Proveedores</h1>
-      <button style={{ marginBottom: '20px', padding: '10px', cursor: 'pointer' }}>
-        + Nuevo Proveedor
-      </button>
-
+    <div className='content-page'>
+      <div className='title-page'>
+        <h1>Listado de Proveedores</h1>
+        <button>Nuevo Proveedor</button>
+      </div>
       {cargando ? (
         <p>Cargando datos...</p>
       ) : (
-        <table style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse' }}>
+        <table>
           <thead>
-            <tr style={{ backgroundColor: 'lightblue', borderBottom: '1px solid #ccc' }}>
-              <th style={{ padding: '10px' }}>Nombre</th>
-              <th style={{ padding: '10px' }}>Categoría</th>
-              <th style={{ padding: '10px' }}>Ciudad</th>
-              <th style={{ padding: '10px' }}>Crédito</th>
+            <tr>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Ciudad</th>
+              <th>Crédito</th>
             </tr>
           </thead>
           <tbody>
             {proveedores.length === 0 ? (
               <tr>
-                <td colSpan="4" style={{ padding: '10px', textAlign: 'center' }}>No hay proveedores registrados aún.</td>
+                <td colSpan="4">No hay proveedores registrados aún.</td>
               </tr>
             ) : (
               proveedores.map((prov) => (
-                <tr key={prov.id} style={{ borderBottom: '1px solid #eee' }}>
-                  <td style={{ padding: '10px' }}>{prov.nombre}</td>
-                  <td style={{ padding: '10px' }}>{prov.categoria || '-'}</td>
-                  <td style={{ padding: '10px' }}>{prov.ciudad || '-'}</td>
-                  <td style={{ padding: '10px' }}>{prov.tiene_credito ? '✅ SÍ' : '❌ NO'}</td>
+                <tr key={prov.id}>
+                  <td>{prov.nombre}</td>
+                  <td>{prov.categoria || '--'}</td>
+                  <td>{prov.ciudad || '--'}</td>
+                  <td>{prov.tiene_credito ? 'SÍ' : 'NO'}</td>
                 </tr>
               ))
             )}
